@@ -11,8 +11,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@unlok-co/nuxt-stripe": "^2.0.0",
     "nuxt": "^3.8.1",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@vue-stripe/vue-stripe": "^4.5.0"
   }
 }
