@@ -138,7 +138,7 @@ console.log(element)
         <div id="stripe-payment-element-errors" role="alert" />
       </slot>
       <div class="flex justify-end">
-        <UtilitiesButtonPrimary ref="submitButtonRef" type="submit" label="Pay" icon-name="i-heroicons-currency-euro-20-solid" />
+        <UButton variant="outline" ref="submitButtonRef" type="submit" label="Pay" icon="i-heroicons-currency-euro-20-solid" />
       </div>
     </form>
   </div>
