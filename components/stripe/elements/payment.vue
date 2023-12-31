@@ -68,7 +68,8 @@ const stripe = await loadStripe(props.pk)
 
 
 const elements = stripe.elements({
-  clientSecret: props.elementsOptions.clientSecret
+  clientSecret: props.elementsOptions.clientSecret,
+  appearance: props.elementsOptions.appearance || {}
 })
 const element = elements.create(ELEMENT_TYPE, props.createOptions)
 
@@ -137,12 +138,13 @@ console.log(element)
       <slot name="stripe-payment-element-errors">
         <div id="stripe-payment-element-errors" role="alert" />
       </slot>
-      <div class="flex justify-end">
-        <UButton variant="outline" ref="submitButtonRef" type="submit" label="Pay" icon="i-heroicons-currency-euro-20-solid" />
+      <div class="flex">
+        <UButton variant="solid" ref="submitButtonRef" type="submit" label="Pay" icon="i-heroicons-currency-euro-20-solid" />
       </div>
     </form>
   </div>
 </template>
 
 <style scoped>
+
 </style>
