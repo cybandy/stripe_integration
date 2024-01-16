@@ -104,7 +104,7 @@ async function handlePayment(e){
     {
       elements,
       confirmParams:{
-        return_url: `${window.origin}/${props.redirectPage}`,
+        return_url: `${window.origin}${props.redirectPage.trim()}`,
         
       }
     }
@@ -118,8 +118,7 @@ async function handlePayment(e){
     emits('update:success', true)
   }
 }
-console.log(props.elementsOptions.clientSecret)
-console.log(element)
+
 </script>
 
 <template>
