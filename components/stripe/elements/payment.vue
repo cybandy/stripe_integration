@@ -48,6 +48,11 @@ const props = defineProps({
     customerAddressInfo:{
       type:Object,
       required:true
+    },
+    redirectPage:{
+      type:String, 
+      required:true,
+      //relative page eg: /checkout/success
     }
   })
 
@@ -95,27 +100,19 @@ const emits = defineEmits(['update:success'])
 
 
 const address = props.customerAddressInfo
+
 async function handlePayment(e){
   e.preventDefault()
   // todo
   const {error, paymentIntent} = await stripe.confirmPayment(
     {
       elements,
-      // clientSecret: props.elementsOptions.clientSecret,
       confirmParams:{
-        return_url: `${window.origin}/checkout/success`,
-        // shipping:{
-        //   city: address.city,
-        //   country: address.country_code.toUpperCase(),
-        //   postal_code: address.postal_code,
-        //   line1: address.address_1,
-        //   line2: address.address_2,
-        //   name: `${address.first_name} ${address.last_name}`
-        // }
+        return_url: `${window.origin}/${props.redirect}`,
+        
       }
     }
   )
-  // const {error, paymentIntent} = await stripe.confirmP
   if(error){
     const errorElement = document.getElementById('stripe-payment-element-errors')
     errorElement.textContent = error.message
