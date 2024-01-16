@@ -21,10 +21,6 @@ const props = defineProps({
       // required: true,
       default: () => ({}),
     },
-    redirect: {
-      type: String,
-      default: 'always',
-    },
     createOptions: {
       type: Object,
       default: () => ({}),
@@ -108,7 +104,7 @@ async function handlePayment(e){
     {
       elements,
       confirmParams:{
-        return_url: `${window.origin}/${props.redirect}`,
+        return_url: `${window.origin}/${props.redirectPage}`,
         
       }
     }
