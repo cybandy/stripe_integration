@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      script: [
-        { src: 'https://js.stripe.com/v3', crossorigin: 'anonymous' }
-      ]
+      // script: [
+      //   { src: 'https://js.stripe.com/v3', crossorigin: 'anonymous' }
+      // ]
     }
   },
   modules: [
