@@ -1,8 +1,7 @@
 import { STRIPE_JS_SDK_URL } from "./constants";
 
-export const loadStripeSdk = ({ version = 'v3', disableAdvancedFraudDetection = true }, callback: Function) => {
+export const loadStripeSdk = ({ version = 'v3', disableAdvancedFraudDetection = true }, callback) => {
   if (process.client) {
-
     if (window?.Stripe) {
       callback()
       return;
